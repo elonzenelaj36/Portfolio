@@ -2,6 +2,22 @@ import './Projects.css'
 
 const projects = [
   {
+    icon: '🚀',
+    iconClass: 'green-icon',
+    title: 'CheckBeforeBuy-AI Powered app',
+    desc: 'Check Before Buy is an AI-powered mobile application designed to help users make smarter furniture purchasing decisions. It allows users to scan and analyze products, remove backgrounds, generate 3D furniture models, visualize products in their own rooms, and compare them with existing furniture before deciding whether to buy.',
+    tech: [
+      { label: 'React Native',    cls: 'badge-blue' },
+      { label: 'Expo',            cls: 'badge-blue' },
+      { label: 'Node.js',         cls: 'badge-green' },
+      { label: 'Express.js',      cls: 'badge-green' },
+      { label: 'MySQL',           cls: 'badge-orange' },
+      { label: 'AI APIs',         cls: 'badge-purple' },
+      { label: 'Computer Vision', cls: 'badge-purple' },
+      { label: '3D Generation',   cls: 'badge-purple' },
+    ],
+  },
+  {
     icon: '🤖',
     iconClass: '',
     title: 'AI Powered Car-Marketplace',
@@ -14,19 +30,6 @@ const projects = [
       { label: 'JSON',        cls: 'badge-purple' },
       { label: 'Node.js',     cls: 'badge-green' },
       { label: 'Express.js',     cls: 'badge-orange' },
-    ],
-  },
-  {
-    icon: '🚀',
-    iconClass: 'green-icon',
-    title: 'Student-Study dashboard',
-    desc: 'Student Study Dashboard is a full-stack web application designed to help students stay organized and focused. It features a Notes Manager for creating, editing, and searching categorized notes, a Task Tracker with completion filtering and progress tracking, and a Pomodoro Study Timer with an animated countdown ring. ',
-    tech: [
-      { label: 'React.js',   cls: 'badge-blue' },
-      { label: 'Express.js',    cls: 'badge-green' },
-      { label: 'Node.js', cls: 'badge-purple' },
-      { label: 'JavaScript',   cls: 'badge-orange' },
-      { label: 'JSON Files',   cls: 'badge-orange' },
     ],
   },
   {

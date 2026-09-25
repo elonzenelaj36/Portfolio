@@ -319,6 +319,8 @@
     .project:hover .project-media { transform: scale(1.06); }
   }
   .project:first-child .project-media { height: 260px; }
+  .project-media--trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .project-media--trio > span { background-size: cover; background-position: top center; }
   .project-media::after {
     content: ""; position: absolute; inset: 0;
     background: linear-gradient(160deg, rgba(226,96,47,0.30), transparent 50%), linear-gradient(to top, rgba(11,10,10,0.55), transparent 55%);
@@ -619,26 +621,31 @@
     </div>
     <div class="projects-list" data-stagger data-stagger-step="110">
       <article class="project reveal">
+        <!-- TODO: add project image here. ~900x600. Set: style="background-image:url('your-image.jpg')" -->
+        <div class="project-media project-media--trio">
+          <span style="background-image: url('Photos/CBB.jpeg');"></span>
+          <span style="background-image: url('Photos/CBB2.jpeg');"></span>
+          <span style="background-image: url('Photos/CBB3.jpeg');"></span>
+        </div>
+        <div class="project-body">
+          <h3>CheckBeforeBuy-AI Powered app</h3>
+          <p>Check Before Buy is an AI-powered mobile application designed to help users make smarter furniture purchasing decisions. It allows users to scan and analyze products, remove backgrounds, generate 3D furniture models, visualize products in their own rooms, and compare them with existing furniture before deciding whether to buy.</p>
+          <div class="project-tags">
+            <span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">Node.js</span><span class="tag">Express.js</span>
+            <span class="tag">MySQL</span><span class="tag">AI APIs</span><span class="tag">Computer Vision</span><span class="tag">3D Generation</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project reveal">
         <!-- TODO: add project image here. Wide banner ~1400x700. Set: style="background-image:url('your-image.jpg')" -->
-        <div class="project-media" style="background-image: url('Photos/car-sellingAI.png');"></div>
+        <div class="project-media" style="background-image: url('Photos/CAR-MARKETPLACE.png');"></div>
         <div class="project-body">
           <h3>AI Powered Car-Marketplace</h3>
           <p>Built a full-stack AI-powered car marketplace where users can buy and sell vehicles with intelligent assistance. Features local AI integration (Ollama/LLaMA 3.2) for automated listing descriptions, smart car recommendations and real-time market price estimation. Includes image uploads, advanced search and filtering, favorites system, and a personal seller dashboard</p>
           <div class="project-tags">
             <span class="tag">JavaScript</span><span class="tag">React.js</span><span class="tag">MySQL</span>
             <span class="tag">Ollama AI</span><span class="tag">JSON</span><span class="tag">Node.js</span><span class="tag">Express.js</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project reveal">
-        <!-- TODO: add project image here. ~900x600. Set: style="background-image:url('your-image.jpg')" -->
-        <div class="project-media" style="background-image: url('Photos/StudentStudy-web.png');"></div>
-        <div class="project-body">
-          <h3>Student-Study dashboard</h3>
-          <p>Student Study Dashboard is a full-stack web application designed to help students stay organized and focused. It features a Notes Manager for creating, editing, and searching categorized notes, a Task Tracker with completion filtering and progress tracking.</p>
-          <div class="project-tags">
-            <span class="tag">React.js</span><span class="tag">Express.js</span><span class="tag">Node.js</span><span class="tag">JavaScript</span><span class="tag">JSON Files</span>
           </div>
         </div>
       </article>
