@@ -308,10 +308,22 @@
   .project {
     display: flex; flex-direction: column;
     border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
-    background: var(--surface);
+    background: var(--surface); position: relative;
     transition: border-color 0.35s var(--ease), transform 0.35s var(--ease);
   }
   .project:hover { border-color: var(--accent-line); transform: translateY(-5px); }
+  .project::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    transform: scaleX(0); transition: transform 0.45s var(--ease);
+  }
+  .project:hover::before { transform: scaleX(1); }
+  .project-icon {
+    width: 46px; height: 46px; margin: 0 auto 16px; display: grid; place-items: center;
+    border-radius: 12px; border: 1px solid var(--accent-line); background: var(--accent-soft); color: var(--accent);
+  }
+  .project-icon svg { width: 22px; height: 22px; }
+  .project-label { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
   .project:active { transform: translateY(-2px) scale(0.995); transition-duration: 0.12s; }
   .project-body { padding: 26px 28px 30px; flex: 1; display: flex; flex-direction: column; text-align: center; }
   .project-body h3 { font-size: 21px; font-weight: 600; letter-spacing: -0.02em; }
@@ -374,6 +386,7 @@
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: opacity 0.4s var(--ease-out); }
     .status-dot { animation: none; }
+    .project::before { transition: none; }
     .scroll-progress { display: none; }
     /* no position/scale movement; keep color + border feedback only */
     .btn:hover, .btn:active, .btn-primary:hover svg,
@@ -605,6 +618,8 @@
     <div class="projects-list" data-stagger data-stagger-step="110">
       <article class="project reveal">
         <div class="project-body">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
+          <div class="project-label">Mobile · AI</div>
           <h3>CheckBeforeBuy-AI Powered app</h3>
           <p>Check Before Buy is an AI-powered mobile application designed to help users make smarter furniture purchasing decisions. It allows users to scan and analyze products, remove backgrounds, generate 3D furniture models, visualize products in their own rooms, and compare them with existing furniture before deciding whether to buy.</p>
           <div class="project-tags">
@@ -616,6 +631,8 @@
 
       <article class="project reveal">
         <div class="project-body">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17H3v-5l2-5h14l2 5v5h-2"/><path d="M3 12h18"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/><path d="M9.5 17h5"/></svg></div>
+          <div class="project-label">Full-Stack · AI</div>
           <h3>AI Powered Car-Marketplace</h3>
           <p>Built a full-stack AI-powered car marketplace where users can buy and sell vehicles with intelligent assistance. Features local AI integration (Ollama/LLaMA 3.2) for automated listing descriptions, smart car recommendations and real-time market price estimation. Includes image uploads, advanced search and filtering, favorites system, and a personal seller dashboard</p>
           <div class="project-tags">
@@ -627,6 +644,8 @@
 
       <article class="project reveal">
         <div class="project-body">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
+          <div class="project-label">Data Engineering</div>
           <h3>Car-Marketplace Data Pipeline</h3>
           <p>An ETL pipeline for the AI Powered Car-Marketplace. It extracts cars, users and favorites from the app's MySQL database, cleans and deduplicates them with Pandas, and runs validation checks for missing or duplicate IDs, invalid prices and mileage, and broken references. The data is then loaded incrementally into a star-schema data warehouse (car, user and date dimensions plus a favorites fact table). Each run is logged, and the pipeline stops if validation fails.</p>
           <div class="project-tags">
@@ -638,6 +657,8 @@
 
       <article class="project reveal">
         <div class="project-body">
+          <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-3h14v3"/></svg></div>
+          <div class="project-label">Networking</div>
           <h3>Stadium Network Infrastructure Design</h3>
           <p>Designed a scalable network project for a stadium that has to serve thousands of users at once during events. Critical services like administration, security, ticketing and guest Wi-Fi are separated into their own VLANs, and the routing and IP addressing are planned for growth, redundancy and heavy traffic. The design was created and tested in Cisco Packet Tracer.</p>
           <div class="project-tags">
