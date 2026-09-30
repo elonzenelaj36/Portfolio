@@ -329,8 +329,9 @@
   .project-body h3 { font-size: 21px; font-weight: 600; letter-spacing: -0.02em; }
   .project-body p { margin: 11px auto 0; color: var(--muted); font-size: 15px; max-width: 60ch; }
   .project-tags { margin-top: auto; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .project-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; margin-top: 16px; }
   .project-view {
-    align-self: center; margin-top: 16px; padding: 0; border: 0; background: none; cursor: pointer;
+    margin: 0; padding: 0; border: 0; background: none; cursor: pointer;
     font-family: var(--mono); font-size: 13px; color: var(--accent);
     display: inline-flex; align-items: center; gap: 6px;
   }
@@ -345,7 +346,8 @@
   .lb-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px; color: #F2EEEA; font-family: var(--mono); font-size: 13px; }
   .lb-stage { position: relative; display: grid; place-items: center; min-height: 0; padding: 0 64px; }
   .lb-stage img { display: block; max-width: 100%; max-height: calc(100vh - 150px); max-height: calc(100dvh - 150px); object-fit: contain; border-radius: 8px; }
-  .lb-stage img[hidden], .lb-group[hidden] { display: none; }
+  .lb-stage img[hidden], .lb-group[hidden], .lb-stage video[hidden] { display: none; }
+  .lb-stage video { display: block; max-width: 100%; max-height: calc(100vh - 150px); max-height: calc(100dvh - 150px); border-radius: 8px; background: #000; }
   .lb-group { display: flex; justify-content: center; align-items: center; gap: 18px; max-width: 100%; }
   .lb-group img { height: calc(100vh - 150px); height: calc(100dvh - 150px); width: auto; max-width: calc((100vw - 200px) / 3); flex-shrink: 1; }
   .lb-btn {
@@ -360,7 +362,7 @@
   .lb-count { padding: 14px 20px 20px; text-align: center; color: rgba(242,238,234,0.6); font-family: var(--mono); font-size: 12px; }
   @media (max-width: 600px) {
     .lb-stage { padding: 0 12px; }
-    .lb-stage img { max-height: calc(100vh - 190px); max-height: calc(100dvh - 190px); }
+    .lb-stage img, .lb-stage video { max-height: calc(100vh - 190px); max-height: calc(100dvh - 190px); }
     /* on phones the group scrolls sideways, one screenshot at a time */
     .lb-group { justify-content: flex-start; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 0 12px; margin: 0 -12px; }
     .lb-group img { flex-shrink: 0; height: auto; max-width: 78vw; max-height: calc(100vh - 190px); max-height: calc(100dvh - 190px); scroll-snap-align: center; }
@@ -666,7 +668,10 @@
             <span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">Node.js</span><span class="tag">Express.js</span>
             <span class="tag">MySQL</span><span class="tag">AI APIs</span><span class="tag">Computer Vision</span><span class="tag">3D Generation</span>
           </div>
-          <button type="button" class="project-view" data-images="Photos/CBB.jpeg|Photos/CBB2.jpeg|Photos/CBB3.jpeg" data-layout="group">View screenshots <span aria-hidden="true">→</span></button>
+          <div class="project-links">
+            <button type="button" class="project-view" data-images="Photos/CBB.jpeg|Photos/CBB2.jpeg|Photos/CBB3.jpeg" data-layout="group">View screenshots <span aria-hidden="true">→</span></button>
+            <button type="button" class="project-view" data-video="Photos/CBB-video.mp4" data-poster="Photos/CBB-video-poster.jpg">View video <span aria-hidden="true">→</span></button>
+          </div>
         </div>
       </article>
 
@@ -680,7 +685,9 @@
             <span class="tag">JavaScript</span><span class="tag">React.js</span><span class="tag">MySQL</span>
             <span class="tag">Ollama AI</span><span class="tag">Node.js</span><span class="tag">Express.js</span>
           </div>
-          <button type="button" class="project-view" data-images="Photos/CAR-MARKETPLACE.png">View screenshots <span aria-hidden="true">→</span></button>
+          <div class="project-links">
+            <button type="button" class="project-view" data-images="Photos/CAR-MARKETPLACE.png">View screenshots <span aria-hidden="true">→</span></button>
+          </div>
         </div>
       </article>
 
@@ -694,7 +701,9 @@
             <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">SQLAlchemy</span><span class="tag">MySQL</span><span class="tag">Star Schema</span>
             <span class="tag">Java 21</span><span class="tag">JavaFX</span><span class="tag">JDBC</span><span class="tag">JUnit</span>
           </div>
-          <button type="button" class="project-view" data-images="Photos/CarMarketplacePipeline-Dashboard.png">View screenshots <span aria-hidden="true">→</span></button>
+          <div class="project-links">
+            <button type="button" class="project-view" data-images="Photos/CarMarketplacePipeline-Dashboard.png">View screenshots <span aria-hidden="true">→</span></button>
+          </div>
         </div>
       </article>
 
@@ -707,7 +716,9 @@
           <div class="project-tags">
             <span class="tag">Cisco Packet Tracer</span><span class="tag">VLANs</span><span class="tag">Routing</span><span class="tag">Network Design</span>
           </div>
-          <button type="button" class="project-view" data-images="Photos/Topologjija%20e%20Plot.png">View screenshots <span aria-hidden="true">→</span></button>
+          <div class="project-links">
+            <button type="button" class="project-view" data-images="Photos/Topologjija%20e%20Plot.png">View screenshots <span aria-hidden="true">→</span></button>
+          </div>
         </div>
       </article>
     </div>
@@ -775,7 +786,7 @@
   </div>
 </section>
 
-<dialog class="lightbox" id="lightbox" aria-label="Project screenshots">
+<dialog class="lightbox" id="lightbox" aria-label="Project media">
   <div class="lb-top">
     <span id="lbTitle"></span>
     <button type="button" class="lb-btn" id="lbClose" aria-label="Close">&times;</button>
@@ -784,6 +795,7 @@
     <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Previous screenshot">&lsaquo;</button>
     <img id="lbImg" alt="" />
     <div class="lb-group" id="lbGroup" hidden></div>
+    <video id="lbVideo" controls playsinline muted preload="none" hidden></video>
     <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Next screenshot">&rsaquo;</button>
   </div>
   <div class="lb-count" id="lbCount"></div>
@@ -917,7 +929,7 @@
     if (!box || !box.showModal) return;
     var img = document.getElementById('lbImg'), title = document.getElementById('lbTitle'), count = document.getElementById('lbCount');
     var prev = document.getElementById('lbPrev'), next = document.getElementById('lbNext');
-    var group = document.getElementById('lbGroup');
+    var group = document.getElementById('lbGroup'), video = document.getElementById('lbVideo');
     var images = [], name = '', i = 0;
     // data-layout="group" shows every screenshot side by side (used for the phone screenshots)
     function showGroup() {
@@ -931,8 +943,16 @@
       group.hidden = false;
       count.textContent = window.matchMedia('(max-width: 600px)').matches ? 'Swipe to see all ' + images.length : '';
     }
+    // data-video plays a clip; playsinline keeps it inside the page on iPhones
+    function showVideo(src, poster) {
+      img.hidden = group.hidden = prev.hidden = next.hidden = true;
+      images = []; count.textContent = '';
+      video.poster = poster || ''; video.src = src; video.hidden = false;
+      var playing = video.play();
+      if (playing && playing.catch) playing.catch(function () {});
+    }
     function show() {
-      group.hidden = true; img.hidden = false;
+      group.hidden = video.hidden = true; img.hidden = false;
       img.src = images[i];
       img.alt = name + ' screenshot ' + (i + 1) + ' of ' + images.length;
       count.textContent = images.length > 1 ? (i + 1) + ' / ' + images.length : '';
@@ -941,9 +961,11 @@
     function go(d) { i = (i + d + images.length) % images.length; show(); }
     document.querySelectorAll('.project-view').forEach(function (b) {
       b.addEventListener('click', function () {
-        images = b.getAttribute('data-images').split('|');
         name = b.closest('.project').querySelector('h3').textContent;
         title.textContent = name; i = 0;
+        if (b.hasAttribute('data-video')) { showVideo(b.getAttribute('data-video'), b.getAttribute('data-poster')); box.showModal(); return; }
+        images = b.getAttribute('data-images').split('|');
+        group.hidden = true; video.hidden = true;
         if (b.getAttribute('data-layout') === 'group') showGroup(); else show();
         box.showModal();
       });
@@ -951,6 +973,10 @@
     prev.addEventListener('click', function () { go(-1); });
     next.addEventListener('click', function () { go(1); });
     document.getElementById('lbClose').addEventListener('click', function () { box.close(); });
+    // stop the clip and free it when the popup closes (Esc, ×, or backdrop)
+    box.addEventListener('close', function () {
+      video.pause(); video.removeAttribute('src'); video.load(); video.hidden = true;
+    });
     box.addEventListener('click', function (e) { if (e.target === box || e.target.classList.contains('lb-stage')) box.close(); });
     box.addEventListener('keydown', function (e) {
       if (images.length < 2 || !group.hidden) return;
