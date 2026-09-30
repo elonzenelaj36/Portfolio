@@ -459,6 +459,7 @@
     .footer .top { flex-direction: column; gap: 24px; }
   }
 </style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23E2602F'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='15' font-weight='700' fill='%23160A04' text-anchor='middle'%3EEZ%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
 <span id="navSentinel" aria-hidden="true"></span>
@@ -535,7 +536,7 @@
 <section class="stats">
   <div class="wrap">
     <div class="grid" data-stagger data-stagger-step="80">
-      <div class="stat reveal"><div class="num"><span class="accent" data-count="3">0</span></div><div class="label">Projects built</div></div>
+      <div class="stat reveal"><div class="num"><span class="accent" data-count="0" data-count-of=".project">0</span></div><div class="label">Projects built</div></div>
       <div class="stat reveal"><div class="num"><span class="accent" data-count="3">0</span></div><div class="label">Courses &amp; certificates</div></div>
       <div class="stat reveal"><div class="num num-text">BSc</div><div class="label">Computer Science, UBT</div></div>
       <div class="stat reveal"><div class="num num-text">Backend</div><div class="label">Where I focus most</div></div>
@@ -620,7 +621,7 @@
         <div class="project-body">
           <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
           <div class="project-label">Mobile · AI</div>
-          <h3>CheckBeforeBuy-AI Powered app</h3>
+          <h3>CheckBeforeBuy: AI Furniture App</h3>
           <p>Check Before Buy is an AI-powered mobile application designed to help users make smarter furniture purchasing decisions. It allows users to scan and analyze products, remove backgrounds, generate 3D furniture models, visualize products in their own rooms, and compare them with existing furniture before deciding whether to buy.</p>
           <div class="project-tags">
             <span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">Node.js</span><span class="tag">Express.js</span>
@@ -633,11 +634,11 @@
         <div class="project-body">
           <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17H3v-5l2-5h14l2 5v5h-2"/><path d="M3 12h18"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/><path d="M9.5 17h5"/></svg></div>
           <div class="project-label">Full-Stack · AI</div>
-          <h3>AI Powered Car-Marketplace</h3>
+          <h3>AI-Powered Car Marketplace</h3>
           <p>Built a full-stack AI-powered car marketplace where users can buy and sell vehicles with intelligent assistance. Features local AI integration (Ollama/LLaMA 3.2) for automated listing descriptions, smart car recommendations and real-time market price estimation. Includes image uploads, advanced search and filtering, favorites system, and a personal seller dashboard</p>
           <div class="project-tags">
             <span class="tag">JavaScript</span><span class="tag">React.js</span><span class="tag">MySQL</span>
-            <span class="tag">Ollama AI</span><span class="tag">JSON</span><span class="tag">Node.js</span><span class="tag">Express.js</span>
+            <span class="tag">Ollama AI</span><span class="tag">Node.js</span><span class="tag">Express.js</span>
           </div>
         </div>
       </article>
@@ -647,7 +648,7 @@
           <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
           <div class="project-label">Data Engineering</div>
           <h3>Car-Marketplace Data Pipeline</h3>
-          <p>An ETL pipeline for the AI Powered Car-Marketplace. It extracts cars, users and favorites from the app's MySQL database, cleans and deduplicates them with Pandas, and runs validation checks for missing or duplicate IDs, invalid prices and mileage, and broken references. The data is then loaded incrementally into a star-schema data warehouse (car, user and date dimensions plus a favorites fact table). Each run is logged, and the pipeline stops if validation fails.</p>
+          <p>An ETL pipeline for the AI-Powered Car Marketplace. It extracts cars, users and favorites from the app's MySQL database, cleans and deduplicates them with Pandas, and runs validation checks for missing or duplicate IDs, invalid prices and mileage, and broken references. The data is then loaded incrementally into a star-schema data warehouse (car, user and date dimensions plus a favorites fact table). Each run is logged, and the pipeline stops if validation fails.</p>
           <div class="project-tags">
             <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">SQLAlchemy</span><span class="tag">MySQL</span>
             <span class="tag">ETL</span><span class="tag">Data Warehouse</span><span class="tag">Star Schema</span>
@@ -681,20 +682,20 @@
         <h3>Languages &amp; Frameworks</h3>
         <div class="pills" data-stagger data-stagger-step="45">
           <span class="pill reveal">Java</span><span class="pill reveal">JavaScript</span><span class="pill reveal">Python</span>
-          <span class="pill reveal">React.js</span><span class="pill reveal">Express</span><span class="pill reveal">FastAPI</span>
+          <span class="pill reveal">React.js</span><span class="pill reveal">React Native</span><span class="pill reveal">Node.js</span><span class="pill reveal">Express</span><span class="pill reveal">FastAPI</span>
         </div>
       </div>
       <div class="skill-group reveal">
         <h3>Data &amp; Analysis</h3>
         <div class="pills" data-stagger data-stagger-step="45">
           <span class="pill reveal">NLP</span><span class="pill reveal">Data Analysis</span><span class="pill reveal">Pandas</span>
-          <span class="pill reveal">Machine Learning</span><span class="pill reveal">Data Visualization</span>
+          <span class="pill reveal">Machine Learning</span><span class="pill reveal">Data Visualization</span><span class="pill reveal">ETL Pipelines</span><span class="pill reveal">SQLAlchemy</span>
         </div>
       </div>
       <div class="skill-group reveal">
         <h3>Tools</h3>
         <div class="pills" data-stagger data-stagger-step="45">
-          <span class="pill reveal">Git / GitHub</span><span class="pill reveal">SQL Server</span><span class="pill reveal">Cisco Packet Tracer</span>
+          <span class="pill reveal">Git / GitHub</span><span class="pill reveal">MySQL</span><span class="pill reveal">SQL Server</span><span class="pill reveal">Cisco Packet Tracer</span>
           <span class="pill reveal">PostgreSQL</span><span class="pill reveal">Streamlit</span>
         </div>
       </div>
@@ -826,6 +827,10 @@
   (function () {
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var nums = document.querySelectorAll('[data-count]');
+    // stats with data-count-of count matching elements, so they stay right as content changes
+    document.querySelectorAll('[data-count-of]').forEach(function (n) {
+      n.setAttribute('data-count', document.querySelectorAll(n.getAttribute('data-count-of')).length);
+    });
     function pad(n) { return n < 10 ? '0' + n : '' + n; }
     if (reduce || !('IntersectionObserver' in window)) {
       nums.forEach(function (n) { n.textContent = pad(+n.getAttribute('data-count')); });
