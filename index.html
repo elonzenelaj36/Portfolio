@@ -304,7 +304,7 @@
 
   /* ===================== Projects ===================== */
   .projects-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
-  .project:first-child { grid-column: 1 / -1; }
+  .project:first-child, .project:last-child:nth-child(even) { grid-column: 1 / -1; }
   .project {
     display: flex; flex-direction: column;
     border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
@@ -313,25 +313,10 @@
   }
   .project:hover { border-color: var(--accent-line); transform: translateY(-5px); }
   .project:active { transform: translateY(-2px) scale(0.995); transition-duration: 0.12s; }
-  .project-media { height: 190px; background-color: var(--surface-2); background-size: cover; background-position: center; position: relative;
-    transition: transform 0.6s var(--ease-out); transform-origin: center; }
-  @media (hover: hover) and (pointer: fine) {
-    .project:hover .project-media { transform: scale(1.06); }
-  }
-  .project:first-child .project-media { height: 260px; }
-  .project-media--trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
-  .project-media--trio > span { background-size: cover; background-position: top center; }
-  .project-media::after {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(160deg, rgba(226,96,47,0.30), transparent 50%), linear-gradient(to top, rgba(11,10,10,0.55), transparent 55%);
-  }
-  html[data-theme="light"] .project-media::after {
-    background: linear-gradient(160deg, rgba(199,80,31,0.22), transparent 55%);
-  }
-  .project-body { padding: 26px 28px 30px; flex: 1; display: flex; flex-direction: column; }
+  .project-body { padding: 26px 28px 30px; flex: 1; display: flex; flex-direction: column; text-align: center; }
   .project-body h3 { font-size: 21px; font-weight: 600; letter-spacing: -0.02em; }
-  .project-body p { margin-top: 11px; color: var(--muted); font-size: 15px; max-width: 60ch; }
-  .project-tags { margin-top: auto; padding-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .project-body p { margin: 11px auto 0; color: var(--muted); font-size: 15px; max-width: 60ch; }
+  .project-tags { margin-top: auto; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
   .tag { font-family: var(--mono); font-size: 11.5px; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
 
   /* ===================== Skills ===================== */
@@ -394,7 +379,7 @@
     .btn:hover, .btn:active, .btn-primary:hover svg,
     .pill:hover, .pill:active,
     .contact-card:hover, .contact-card:active, .contact-card:hover .ic,
-    .project:hover, .project:active, .project:hover .project-media,
+    .project:hover, .project:active,
     .footer .f-soc a:hover, .footer .f-soc a:active,
     .theme-toggle:hover, .theme-toggle:active, .logo:hover .mark { transform: none; }
   }
@@ -408,8 +393,7 @@
     .stat:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
     .stat:nth-child(odd) { border-left: none; }
     .projects-list { grid-template-columns: 1fr; }
-    .project:first-child { grid-column: auto; }
-    .project:first-child .project-media { height: 190px; }
+    .project:first-child, .project:last-child:nth-child(even) { grid-column: auto; }
     /* let single-column grid children shrink so long code lines scroll inside the window instead of widening the page */
     .hero .wrap, .about-grid, .projects-list, .contact-grid { grid-template-columns: minmax(0, 1fr); }
     .hero .wrap > *, .about-grid > *, .project, .contact-card > span:last-child { min-width: 0; }
@@ -457,7 +441,6 @@
     .stat .label { font-size: 11px; }
     .focus-row { flex-direction: column; gap: 6px; }
     .focus-row .fr-k { min-width: 0; padding-top: 0; }
-    .project-media, .project:first-child .project-media { height: 170px; }
     .contact-card { gap: 14px; padding: 16px; }
     .contact-card .c-value { font-size: 14px; }
     .footer .top { flex-direction: column; gap: 24px; }
@@ -621,12 +604,6 @@
     </div>
     <div class="projects-list" data-stagger data-stagger-step="110">
       <article class="project reveal">
-        <!-- TODO: add project image here. ~900x600. Set: style="background-image:url('your-image.jpg')" -->
-        <div class="project-media project-media--trio">
-          <span style="background-image: url('Photos/CBB.jpeg');"></span>
-          <span style="background-image: url('Photos/CBB2.jpeg');"></span>
-          <span style="background-image: url('Photos/CBB3.jpeg');"></span>
-        </div>
         <div class="project-body">
           <h3>CheckBeforeBuy-AI Powered app</h3>
           <p>Check Before Buy is an AI-powered mobile application designed to help users make smarter furniture purchasing decisions. It allows users to scan and analyze products, remove backgrounds, generate 3D furniture models, visualize products in their own rooms, and compare them with existing furniture before deciding whether to buy.</p>
@@ -638,8 +615,6 @@
       </article>
 
       <article class="project reveal">
-        <!-- TODO: add project image here. Wide banner ~1400x700. Set: style="background-image:url('your-image.jpg')" -->
-        <div class="project-media" style="background-image: url('Photos/CAR-MARKETPLACE.png');"></div>
         <div class="project-body">
           <h3>AI Powered Car-Marketplace</h3>
           <p>Built a full-stack AI-powered car marketplace where users can buy and sell vehicles with intelligent assistance. Features local AI integration (Ollama/LLaMA 3.2) for automated listing descriptions, smart car recommendations and real-time market price estimation. Includes image uploads, advanced search and filtering, favorites system, and a personal seller dashboard</p>
@@ -651,11 +626,20 @@
       </article>
 
       <article class="project reveal">
-        <!-- TODO: add project image here. ~900x600. Set: style="background-image:url('your-image.jpg')" -->
-        <div class="project-media" style="background-image: url('Photos/Topologjija\ e\ Plot.png');"></div>
+        <div class="project-body">
+          <h3>Car-Marketplace Data Pipeline</h3>
+          <p>An ETL pipeline for the AI Powered Car-Marketplace. It extracts cars, users and favorites from the app's MySQL database, cleans and deduplicates them with Pandas, and runs validation checks for missing or duplicate IDs, invalid prices and mileage, and broken references. The data is then loaded incrementally into a star-schema data warehouse (car, user and date dimensions plus a favorites fact table). Each run is logged, and the pipeline stops if validation fails.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">SQLAlchemy</span><span class="tag">MySQL</span>
+            <span class="tag">ETL</span><span class="tag">Data Warehouse</span><span class="tag">Star Schema</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project reveal">
         <div class="project-body">
           <h3>Stadium Network Infrastructure Design</h3>
-          <p>A structured network design for a stadium venue covering VLAN segmentation, routing, and IP addressing, modeled and simulated in Cisco Packet Tracer.</p>
+          <p>Designed a scalable network project for a stadium that has to serve thousands of users at once during events. Critical services like administration, security, ticketing and guest Wi-Fi are separated into their own VLANs, and the routing and IP addressing are planned for growth, redundancy and heavy traffic. The design was created and tested in Cisco Packet Tracer with simulated event-day traffic to see how it handles congestion and failures.</p>
           <div class="project-tags">
             <span class="tag">Cisco Packet Tracer</span><span class="tag">VLANs</span><span class="tag">Routing</span><span class="tag">Network Design</span>
           </div>
